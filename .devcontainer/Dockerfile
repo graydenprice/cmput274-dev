@@ -24,4 +24,4 @@ RUN apt-get -y update && apt-get -y install
 COPY .devcontainer/requirements.txt .
 
 # Install Requirements
-RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install --no-cache-dir -r requirements.txt
