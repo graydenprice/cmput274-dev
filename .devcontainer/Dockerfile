@@ -17,7 +17,7 @@ RUN ./Python-3.8.10/configure
 RUN make
 RUN make install
 
-RUN -r rm Makefile Makefile.pre Python-3.8.10.tgz Python-3.8.10
+RUN rm -r Makefile Makefile.pre Python-3.8.10.tgz Python-3.8.10
 RUN apt-get -y remove wget zlib1g-dev libssl-dev openssl
 RUN apt-get -y update && apt-get -y install
 
