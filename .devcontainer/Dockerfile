@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 RUN apt-get -y update && apt-get -y install
 
 # begin installing GCC
-RUN apt-get -y install build-essential wget zlib1g-dev libssl-dev openssl
+RUN apt-get -y install build-essential wget zlib1g-dev libssl-dev openssl ssh
 
 # begin installing python
 RUN wget https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz
@@ -22,6 +22,13 @@ RUN apt-get -y update && apt-get -y install
 
 # Copy requirements.txt From Host
 COPY .devcontainer/requirements.txt .
+
+# enable SSH
+RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup sshuser
+RUN mkdir -p /home/sshuser/.ssh
+COPY $HOME/.ssh/idkey.pub /home/root/.ssh/authorized_keys
+RUN chown sshuser:sshgroup /home/sshuser/.ssh/authorized_keys && chmod 600 /home/sshuser/.ssh/authorized_keys
+RUN service ssh start
 
 # Install Requirements
 # RUN pip install --no-cache-dir -r requirements.txt
