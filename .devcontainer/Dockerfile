@@ -1,12 +1,25 @@
-FROM python:3.10-alpine
+FROM ubuntu:22.04
 
 # Change Working Directory
 WORKDIR /usr/src/app
 
 # Install Dependencies
-RUN apk add --update --no-cache --virtual .tmp-build-deps \
-    gcc libc-dev linux-headers postgresql-dev \
-    && apk add libffi-dev
+
+RUN apt-get -y update && apt-get -y install
+
+# begin installing GCC
+RUN apt-get -y install build-essential wget zlib1g-dev libssl-dev openssl
+
+# begin installing python
+RUN wget https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz
+RUN tar xzvf Python-3.8.10.tgz
+RUN ./Python-3.8.10/configure
+RUN make
+RUN make install
+
+RUN -r rm Makefile Makefile.pre Python-3.8.10.tgz Python-3.8.10
+RUN apt-get -y remove wget zlib1g-dev libssl-dev openssl
+RUN apt-get -y update && apt-get -y install
 
 # Copy requirements.txt From Host
 COPY .devcontainer/requirements.txt .
