@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 RUN apt-get -y update && apt-get -y install
 
 # begin installing GCC
-RUN apt-get -y install build-essential wget zlib1g-dev libssl-dev openssl ssh libsdl2-2.0
+RUN apt-get -y install build-essential wget zlib1g-dev libssl-dev openssl ssh libsdl2-2.0 git
 
 # begin installing python
 RUN wget https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz
