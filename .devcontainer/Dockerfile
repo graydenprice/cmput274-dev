@@ -24,4 +24,5 @@ RUN apt-get -y update && apt-get -y install
 COPY .devcontainer/requirements.txt .
 
 # Install Requirements
+RUN pip3 install pygame
 # RUN pip install --no-cache-dir -r requirements.txt
