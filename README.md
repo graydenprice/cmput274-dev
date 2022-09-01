@@ -1,5 +1,5 @@
-# CMPUT 174 Development Environment
-This repository contains everything you need to create a standard development environment for your CMPUT 174 assignments. In addition to the development environment, a standard project structure has also been provided in which to write your solutions. Please refer to the instructions and videos below to setup your environment.
+# CMPUT 274 Development Environment
+This repository contains everything you need to create a standard development environment for your CMPUT 274 assignments. In addition to the development environment, a standard project structure has also been provided in which to write your solutions. Please refer to the instructions and videos below to setup your environment.
 
 # Step 1: Install Docker (Windows)
 1. Open the Windows Powershell as an Administrator by typing "PowerShell" into the Windows search bar, right-clicking "Windows PowerShell", and selecting "Run as administrator".
@@ -24,7 +24,7 @@ Follow these [instructions](https://www.virtualmetric.com/blog/how-to-enable-har
 1. Install Visual Studio Code. Follow this [link](https://code.visualstudio.com/download) to download the installer for macOS, Windows, and Linux.
 2. Open Visual Studio Code.
 3. Refer to the video "Installing Remote-Containers" below for a demonstration of the following instructions. Install the `Remote-Containers` extension for Visual Studio Code. To do so, select the `Extensions` menu from the panel on the left side of the window and enter `Remote Containers` in the search bar. Finally, click the `Install` button to add the extension to Visual Studio.  
-5. Refer to the video "Creating The Development Environment" below for a demonstration of the following instructions. Click the icon (typically blue or green) in the bottom-left corner of the window. In the menu that pops up, select `Clone Repository In Container Volume` and enter the URL of this repository (https://github.com/UAlberta-CMPUT174/cmput174-dev). 
+5. Refer to the video "Creating The Development Environment" below for a demonstration of the following instructions. Click the icon (typically blue or green) in the bottom-left corner of the window. In the menu that pops up, select `Clone Repository In Container Volume` and enter the URL of this repository (https://github.com/graydenprice/cmput274-dev). 
 6. For a demonstration of setting the Python interpreter (should be set by default), running scripts, or restoring a previous session after closing Visual Studio Code, refer to the corresponding videos below.
 
 # Video: Installing Remote-Containers
